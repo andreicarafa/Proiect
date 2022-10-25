@@ -1,0 +1,20 @@
+﻿@model Proiect___Carafa_Andrei.ViewModels.UserModel;
+    
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Index">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="@Model.userId" class="control-label"></label>
+                <input asp-for="@Model.userId" class="form-control" />
+                <span asp-validation-for="@Model.userId" class="text-danger"></span>
+            </div>   
+   <a asp-action="GenerareParola" asp-route-id="@Model.userId">Generare parola</a>
+        </form>
+      
+    </div>
+</div>
+
+
+

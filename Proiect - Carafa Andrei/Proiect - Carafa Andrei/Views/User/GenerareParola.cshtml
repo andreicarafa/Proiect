@@ -1,0 +1,24 @@
+﻿@model Proiect___Carafa_Andrei.ViewModels.UserModel;
+    
+
+<div class="row">
+    <div class="col-md-4">
+        <div>Id-ul userului pentru care a fost generata parola este: @Html.DisplayFor(model => model.userId)</div>
+       <div>
+        Parola generata este: 
+        @Html.DisplayFor(model => model.password)
+       </div>
+    </div>
+     <form asp-action="GenerareParola">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="@Model.passwordSubmit" class="control-label"></label>
+                <input asp-for="@Model.passwordSubmit" class="form-control" />
+                <span asp-validation-for="@Model.passwordSubmit" class="text-danger"></span>
+            </div> 
+            <a asp-action="SubmitParola" asp-route-id="@Model.passwordSubmit">Submit parola</a> 
+
+        </form>
+         
+</div>
+
